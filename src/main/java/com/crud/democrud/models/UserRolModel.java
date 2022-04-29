@@ -6,19 +6,17 @@ import javax.persistence.*;
 @Table(name = "UserRol")
 public class UserRolModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id_Rol;
 
-    private Long id_User;
     private String rol;
 
-    public Long getId_User() {
-        return id_User;
+    public UserRolModel() {
     }
 
-    public void setId_User(Long id_User) {
-        this.id_User = id_User;
+    public UserRolModel(String rol) {
+        this.rol = rol;
     }
 
     public Long getId_Rol() {
